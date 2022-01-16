@@ -71,58 +71,36 @@ class HomePage extends StatelessWidget {
               ),
             ),
 
-        Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            new Card(
-              color: Colors.white70,
-              child: new Container(
-                padding: EdgeInsets.all(10.0),
-                child: new Column(
-                  children: <Widget>[
-                    new Row(
-                      children: <Widget>[
-                        new Expanded(child: new Text("LENGTH\n(cm)",)),
-                        new Expanded(
-                          child: new TextField(
-                            textAlign: TextAlign.center,
-                            controller: _controller,
-                            decoration: InputDecoration(
-                              filled: true,
-                              fillColor: Colors.white.withOpacity(0.7),
-                              border: OutlineInputBorder(),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
+            Row(
+              children: <Widget>[
+                Expanded(
+                    flex: 2,
+                    child: TextField(
+                      textAlign: TextAlign.center,
+                      controller: _controller,
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Colors.white.withOpacity(1),
+                        //border: OutlineInputBorder(),
+                        hintText: 'Length',
+                      ),
+                    )
                 ),
-              ),
-            ),
 
-            new Card(
-              color: Colors.white70,
-              child: new Container(
-                padding: EdgeInsets.all(10.0),
-                child: new Column(
-                  children: <Widget>[
-                    new Row(
-                      children: <Widget>[
-                        new Expanded(child: new Text("GIRTH\n(cm)",)),
-                        new Expanded(
-                          child: new TextField(
-
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
+                Expanded(
+                    child: TextField(
+                      textAlign: TextAlign.center,
+                      controller: _controller,
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Colors.white.withOpacity(1),
+                        //border: OutlineInputBorder(),
+                        hintText: 'Girth',
+                      ),
+                    )
                 ),
-              ),
+              ],
             ),
-          ],
-        ),
 
             ElevatedButton(
                 child: Text('CALCULATE'),
