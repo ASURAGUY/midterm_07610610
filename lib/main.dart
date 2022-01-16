@@ -26,7 +26,8 @@ class MyApp extends StatelessWidget {
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
 
-  final _controller = TextEditingController();
+  final _controller1 = TextEditingController();
+  final _controller2 = TextEditingController();
   var pig = Pig();
 
   @override
@@ -75,27 +76,33 @@ class HomePage extends StatelessWidget {
               children: <Widget>[
                 Expanded(
                     flex: 2,
-                    child: TextField(
-                      textAlign: TextAlign.center,
-                      controller: _controller,
-                      decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Colors.white.withOpacity(1),
-                        //border: OutlineInputBorder(),
-                        hintText: 'Length',
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: TextField(
+                        textAlign: TextAlign.center,
+                        controller: _controller1,
+                        decoration: InputDecoration(
+                          filled: true,
+                          fillColor: Colors.white.withOpacity(1),
+                          //border: OutlineInputBorder(),
+                          hintText: 'Length',
+                        ),
                       ),
                     )
                 ),
 
                 Expanded(
-                    child: TextField(
-                      textAlign: TextAlign.center,
-                      controller: _controller,
-                      decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Colors.white.withOpacity(1),
-                        //border: OutlineInputBorder(),
-                        hintText: 'Girth',
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: TextField(
+                        textAlign: TextAlign.center,
+                        controller: _controller2,
+                        decoration: InputDecoration(
+                          filled: true,
+                          fillColor: Colors.white.withOpacity(1),
+                          //border: OutlineInputBorder(),
+                          hintText: 'Girth',
+                        ),
                       ),
                     )
                 ),
@@ -106,8 +113,8 @@ class HomePage extends StatelessWidget {
                 child: Text('CALCULATE'),
                 onPressed: () {
 
-                  var inputLength = _controller.text;
-                  var inputGirth = _controller.text;
+                  var inputLength = _controller1.text;
+                  var inputGirth = _controller2.text;
                   var length = double.tryParse(inputLength!);
                   var girth = double.tryParse(inputGirth!);
 
